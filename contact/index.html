@@ -1,0 +1,52 @@
+---
+layout: default
+title: Contact
+---
+
+<div id="content contact" role="main">
+	<article class="page type-page status-publish hentry">
+		<div class="contact-content" style="display: none !important;"></div>
+		<section class="section section-contact">
+			<div class="background-media"></div>
+			<div class="background-overlay"></div>
+			<div class="container">
+				<br>
+				<div class="row vertical-top">
+					<div class="col-md-4  text-default">
+						<h2 class="headline regular text-center">Contactgegevens</h2>
+						<div class="text-center" style="margin-bottom:100px;">
+							<ul>
+								<li><i class="fa fa-map-marker"></i> Bellevue 1, 9050 Gent (Ledeberg)</li>
+								<li><i class="fa fa-phone"></i> Telefoon: 09 266 09 00</li>
+								<li><i class="fa fa-envelope"></i> <a href="mailto:servicefactory@digipolis.gent" class="mailto">servicefactory@digipolis.gent</a></li>
+								<li>BTW: BE 0860.487.295</li>
+								<br>
+								<a href="https://www.digipolis.be/digipolis-gent" target="_blank"class="btn btn-primary">Routebeschrijving</a>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-8  text-default">
+						<h2 class="headline regular text-center">Stuur een bericht</h2>
+						<div class="text-center">
+							<form id="contactform" action="https://formspree.io/servicefactory@digipolis.gent" method="POST">
+								<label>E-mail</label>
+								<input type="email" name="_replyto" required>
+								<label>Bericht</label>
+								<textarea name="h" cols="60" rows="10" required></textarea>
+
+								<button type="submit" value="Send"  class="contactformbutton">
+									<i class="fa fa-paper-plane" aria-hidden="true"></i>
+								</button>
+								<input type="hidden" name="_next" value="contact/thanks.html"/>
+								<input type="text" name="_gotcha" style="display:none" />
+								<input type="hidden" name="_subject" value="Contactform Lab9K" />
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</article>
+</div>
+
+

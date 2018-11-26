@@ -1,0 +1,184 @@
+---
+layout: pages
+title: Service factory
+---
+
+<div id="content" role="main">
+	
+	{% include header_projects.html %}
+
+	<section class="section swatch-white-red">
+		<div class="container">
+			<div class="row">
+				<div id="search-results" class="col-md-9">
+					{% if site.posts.size > 0 %}
+						{% assign servicesbyweight = site.categories.service | sort:"weight"  %}
+						{% for post in servicesbyweight reversed %}
+							{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+							{% if thecycle == 'odd' %}
+								<div class="row row-eq-height">
+							{% endif %}		
+							<article class="post-showinfo post type-post status-publish format-standard has-post-thumbnail hentry category-html category-seo tag-css tag-html tag-mobile col-md-6">
+								<div class="post-media post-service overlay">
+									<div class="post-head small-screen-cente text-center">
+										<h2 class="post-title entry-title">
+											<a href="{{ site.url }}{{ post.url }}" title="Permalink to Increase Traffic being Mobile Friendly" rel="bookmark"> {{ post.title }} </a>
+										</h2>
+									</div>
+									<a href="{{ site.url }}{{ post.url }}" class="feature-image hover-animate">
+									{% if post.image == "" or post.image == nil or post.image == blank %}
+										<img src="images/posts/news_placeholder.png" class="" alt="img-4-1170x400.png">
+									{% else %}
+										<img src="{{ site.baseurl }}{{ post.image }}" alt="img-4-1170x400.png" class="proj-image cropservices"><i class="fa fa-link"></i></a>
+									{% endif %}
+									<div class="post-extras bordered text-center">
+										<div class="text-center">
+											<span class="post-category">
+												<i class="fa fa-folder-open"></i>
+												<a href="{{ site.url }}/services.html?query={{ post.category }}" rel="tag">{{post.category}}</a>
+											</span>
+												{% if post.tags.size > 0 %}
+												<span class="post-tags">												
+													<i class="fa fa-tags"></i>&nbsp;												
+														{% for tag in post.tags %}
+															<a href="{{ site.url }}/services.html?query={{ tag }}" rel="tag">{{ tag }}</a>
+														{% endfor %}
+												</span>
+												{% endif %}
+										</div>
+									</div>
+									<div class="entry-content post-service-text">
+										{% assign first_line = post.content | newline_to_br | split: '<br />' | first %}
+										{% if post.excerpt contains first_line %}
+											{{ post.content | remove: post.excerpt | remove: "Uitdaging" | truncatewords: 40 }}
+										{% else %}
+											{% if post.excerpt contains '</' %}
+												{{ post.excerpt }}
+											{% else %}
+												<p>{{ post.excerpt }}</p>
+											{% endif %}
+										{% endif %}
+									</div>
+									<a href="{{ site.url }}{{ post.url }}" class="more-link box">Lees meer</a>
+									
+								</div>
+							</article>
+							{% if forloop.last == false %}
+								{% if thecycle == 'even' %}
+									</div>
+								{% endif %}
+							{% else %}
+								</div>
+							{% endif %}
+						{% endfor %}
+					{% else %}
+						<p>Er zijn geen services om weer te.</p>
+					{% endif %}	
+				</div>
+				<aside class="col-md-3 sidebar">
+					<div id="search-4" class="sidebar-widget  widget_search">
+						<form action="/services.html" method="get">
+							<input type="text" id="search-box" name="query" placeholder="Zoek naar een Service">
+							<input type="submit" value="zoek">
+						  </form>
+					</div>
+
+					{% comment %} 	<div id="categories-3" class="sidebar-widget  widget_categories">
+						<h3 class="sidebar-header">Categorieën</h3>		
+						<ul>
+							{% for category in site.categories %}
+								<li class="cat-item cat-item-16"><a href="">{{ category | first }}</a>
+	 						{% endfor %}
+						</ul>
+					</div> {% endcomment %}
+					
+					<div id="tag_cloud-3" class="sidebar-widget  widget_tag_cloud">
+						<h3 class="sidebar-header">Populaire Tags</h3>
+						<div class="tagcloud">
+							<ul>
+								{% for tag in site.tags %}
+									<li><a href="{{ site.url }}/services.html?query={{ tag | first }}" id="tags-list" class="post-tagfilter"> {{ tag | first }}</a></li>				
+			  					{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<div id="recent-posts-3" class="sidebar-widget  widget_recent_entries">
+						<h3 class="sidebar-header">Recente Services</h3>
+						<ul>
+							{% if site.posts.size > 0 %}
+								{% assign servicepostsrecent = site.categories.service | sort:"date"  %}
+								{% for post in servicepostsrecent reversed limit:5 %}
+									<li>
+										<div class="post-icon">
+											<i class="fa fa-file-text"></i>
+										</div>
+										<a href="{{post.url}}">{{post.title}}</a>
+										<small></small>
+									</li>
+								{% endfor %}
+							{% else %}
+								<p>There are no posts available.</p>
+							{% endif %}
+						</ul>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</section>
+</div>
+
+<script>
+	window.store = {
+		{% for post in site.categories.service %}
+			
+			"{{ post.url | slugify }}": {
+				"title": "{{ post.title | xml_escape }}",
+				"category": "{{ post.category | xml_escape }}",
+				"content": {{ post.content | remove: post.excerpt | remove: "Uitdaging" | strip_html | truncatewords: 50| strip_newlines | jsonify }},
+				"url": "{{ post.url | xml_escape }}",
+				"baseUrl": "{{ site.baseurl | xml_escape }}",
+				"image": "{{ post.image | xml_escape }}",
+				"tags": "{{ post.tags | xml_escape }}"
+			}
+			{% unless forloop.last %},{% endunless %}
+			
+		{% endfor %}
+	};
+</script>
+<script>
+	function resizeBox(){
+		$(".row-eq-height").each(function( index ){
+			$(this).find(".col-md-6").css('height', 'auto');
+		  	var heights = $(this).find(".col-md-6").map(function() {
+		        return $(this).height();
+		    }).get(),
+
+		    maxHeight = Math.max.apply(null, heights);
+		    console.log("h="+maxHeight);
+
+		    $(this).find(".col-md-6").height(maxHeight);
+		});
+	}
+	$(document).ready(function() {
+		resizeBox();
+	});
+	window.addEventListener('resize', resizeBox);
+	$(window).on("load", resizeBox);
+</script>
+
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    // custom method added to string
+    String.prototype.capitalize = function () {
+        return this.charAt(0).toUpperCase() + this.slice(1);
+    }
+    // String.prototype.format = function (...a) {
+    //     let temp = this;
+    //     for (let letter of a) {
+    //         temp = temp.replace("{$}", letter)
+    //     }
+    //     return temp;
+    // }
+</script>

@@ -1,0 +1,85 @@
+---
+layout: default
+title: Contact
+---
+
+<div id="content contact" role="main">
+	<article class="page type-page status-publish hentry">
+		<div class="contact-content" style="display: none !important;"></div>
+		<section class="section swatch-white-red section-contact ">
+			<div class="background-media"></div>
+			<div class="container">
+				<header class="section-header text-center no-underline">
+					<h1 class="headline regular">Contact</h1>
+				</header>
+				<div class="text-center">
+					<h2>Ik wens mee te werken aan:</h2>
+					<form id="contactform"action="https://formspree.io/servicefactory@digipolis.gent" method="POST">
+						<label>Service</label>
+						<div class="selectform" style="position:relative">
+							<select name="services" id="selectService">
+								{% if site.posts.size > 0 %}
+									{% for post in site.tags.openstaand %}
+										<option value="{{post.title}}">{{post.title}}</option>
+									{% endfor %}
+								{% endif %}
+							</select>
+							<!-- <i class="fa fa-caret-down" aria-hidden="true" style="position:absolute;top:12px;right:15px;"></i> -->
+						</div>
+						<label>E-mail</label>
+						<input type="email" name="_replyto" required>
+	
+						<label>Bedrijfsnaam</label>
+						<input type="text" name="Bedrijfsnaam" required>
+						
+						<label>Contactpersoon</label>
+						<input type="text" name="Contactpersoon" required>
+						
+						<label>Adres</label>
+						<input type="text" name="Adres" required>
+						
+						<label>Mobiel telefoonnummer</label>
+						<input type="text" name="telefoon" required>
+
+						<button type="submit" value="Send"  class="contactformbutton">
+							<i class="fa fa-paper-plane" aria-hidden="true"></i>
+						</button>
+						<input type="hidden" name="_next" value="contact/thanks.html"/>
+						<input type="text" name="_gotcha" style="display:none" />
+						<input type="hidden" name="_subject" value="Contactform Lab9K" />
+					</form>
+				</div>
+			</div>
+		</section>
+	</article>
+</div>
+
+<script>
+	window.onload=function(){
+	    function querySt(ji) {
+	        hu = window.location.search.substring(1); 
+	        gy = hu.split("&");
+
+	        for (i=0;i<gy.length;i++) { 
+	            ft = gy[i].split("="); 
+	            if (ft[0] == ji) { 
+	                return ft[1]; 
+	            } 
+	        } 
+	    } 
+	    var fieldName = decodeURIComponent(querySt("service"));
+	    if( fieldName==null){ 
+	    }
+	    else{ 
+	        var selectObj = document.getElementById('selectService')
+	        for (var i = 0; i < selectObj.options.length; i++) {
+	            if (selectObj.options[i].text == fieldName) {
+	                selectObj.options[i].selected = true;
+	                return;
+	            }
+	        }
+	    } 
+	} 
+</script>
+
+

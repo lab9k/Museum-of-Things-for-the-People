@@ -1,0 +1,98 @@
+<div class="sp-header sp-header-loaded"></div>
+<div class="pace-overlay"></div>
+<div class="top-bar swatch-white">
+  <div class="container">
+    <div class="top top-left"></div>
+    <div class="top top-right"></div>
+  </div>
+</div>
+<div
+  class="sticky-wrapper"
+  style="height: 91px;position:absolute;top:0;left:0;"
+>
+  <header
+    class="navbar navbar-static-top navbar-sticky swatch-white text-caps navbar-stuck"
+    id="masthead"
+    role="banner"
+  >
+    <div class="container">
+      <div class="navbar-header">
+        <button
+          class="navbar-toggle collapsed"
+          data-target="#main-navbar"
+          data-toggle="collapse"
+          data-original-title=""
+          title=""
+        >
+          <span class="icon-bar"></span> <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="{{ site.url }}" class="navbar-brand default-logo"></a>
+        <!--
+          {% if page.url == "/" or page.url contains "/contact" %}
+              <a href="https://digipolis.be" target="_blank" id="bydigipolis" class="bydigipolis-white transparant">By Digipolis</a>
+          {% else %}
+              <a href="https://digipolis.be" target="_blank" id="bydigipolis" class="bydigipolis transparant">By Digipolis</a>
+          {% endif %}
+        -->
+      </div>
+      <nav
+        id="main-navbar"
+        class="collapse navbar-collapse navbar-white"
+        role="navigation"
+      >
+        <div class="menu-sidebar pull-right"></div>
+        <div class="menu-navigation-container">
+          <ul id="menu-navigation" class="nav navbar-nav navbar-right">
+            {% assign active = 'menu-item-active' %} {% if page.url == "/" %} {%
+            assign start = active %} {% endif %}
+            <li
+              id="menu-item-home"
+              class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-46 {{start}}"
+            >
+              <a href="{{ site.url }}">Start</a>
+            </li>
+            <!--
+              {% if page.url contains "/services" %} {% assign services = active
+              %} {% endif %}
+              <li
+                id="menu-item-projects"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-115 dropdown {{services}}"
+              >
+                <a href="{{ site.baseurl }}/services" class="dropdown-toggle"
+                  >Services</a
+                >
+              </li>
+              {% if site.categories.challenge.size > 0 %} {% if page.url contains
+              "/challenge" %} {% assign challenges = active %} {% endif %}
+              <li
+                id="menu-item-projects"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-115 dropdown {{challenges}}"
+              >
+                <a href="{{ site.baseurl }}/challenges" class="dropdown-toggle"
+                  >Challenges</a
+                >
+              </li>
+              {% endif %} {% if page.url contains "/contact" %} {% assign contact
+              = active %} {% endif %}
+              <li
+                id="menu-item-contact"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 {{contact}}"
+              >
+                <a href="{{ site.baseurl }}/contact">Contact</a>
+              </li>
+              {% if page.url contains "/about.html" %} {% assign over = active %}
+              {% endif %}
+              <li
+                id="menu-item-about"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52 {{over}}"
+              >
+                <a href="{{ site.baseurl }}/about.html">Over</a>
+              </li>
+            -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+</div>

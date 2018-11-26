@@ -1,0 +1,134 @@
+
+button.navbar-toggle span.icon-bar {
+    background: black;
+}
+
+ul.tags {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li.tag {
+    float: left;
+    display: block;
+    text-align: center;
+    padding-right: 16px;
+    text-decoration: none;
+}
+
+ul.categories {
+    margin: 0;
+    padding: 0;
+}
+
+li.category {
+    text-align: left;
+    text-decoration: none;
+}
+
+#searchProject{
+    margin: 0;
+    padding: 0;
+
+}
+
+.projects-section-side h2{
+    margin-left: 0;
+}
+
+ul.projects{
+    overflow: visible;
+}
+
+ul.projects li.project {
+    margin: 8px;
+    list-style: none;
+    float: left;
+    position: relative;
+    border-bottom: 5px solid #4b93b8;
+}
+ul.projects li.project a {
+    display: block;
+}
+ul.projects li.project .project-image {
+    width: 100%;
+    display: block;
+}
+ul.projects li.project p {
+    position: absolute;
+    bottom: 8px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    color: white;
+    font-weight: 600;
+    z-index: 10;
+}
+ul.projects li.project .black-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(transparent, black 85%);
+    z-index: 9;
+}
+
+ul.projects li.project a.btn-details {
+    position: absolute;
+    top: 16px;
+    padding: 8px;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 calc(50% - 50px - 8px);
+    text-align: center;
+    background: white;
+    z-index: -1;
+}
+
+img.project-image:hover + p + div + a.btn-details,
+img.project-image:focus + p + div + a.btn-details,
+img.project-image:active + p + div + a.btn-details {
+    z-index: 15;
+}
+
+.post-tagfilter {
+    display: inline-block;
+    background: rgb(0, 100, 149);
+    padding: 0 .5rem;
+    margin-right: .5rem;
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: "PT Sans",Helvetica,Arial,sans-serif;
+    font-size: 90%;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.post-tagfilter:before {
+    content: "\f02b";
+    font-family: FontAwesome;
+    padding-right: .5em;
+}
+
+.post-tagfilter:hover {
+    text-decoration: none;
+    background: #4c92b7;
+    color: #fff;
+}
+
+.menu-item a{
+  color:#337ab7;
+}
+.menu-item a:focus, a:hover{
+  color:#23527c;
+}
+
+img{
+    width:100%;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "MOTFTP",
+  "version": "1.0.0",
+  "description": "Dit is een demo pagina voor de website van service factory gemaakt door lab9k.",
+  "main": "index.js",
+  "scripts": {
+    "publish": "node ./publish.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lab9k/Museum-of-Things-for-the-People.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lab9k/Museum-of-Things-for-the-People/issues"
+  },
+  "homepage": "https://github.com/lab9k/Museum-of-Things-for-the-People#readme",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}

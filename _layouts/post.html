@@ -1,0 +1,284 @@
+---
+layout: pages
+title: Service factory
+---
+
+<head>
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+
+<body>
+
+<div id="content" role="main">
+    <section class="section">
+        <div class="container">
+            <h1 class="headline super regular"> {{ page.title }} </h1>
+            <div class="row row-eq-height">
+                <div class="col-md-12 markdownlayout">
+                    {% if page.category == "service"  %}
+                        <ul class="pager"> 
+                            {% assign prev = "" %}
+                            {% assign next = "" %}
+                            {% assign stop = false %}
+                            {% for post in site.posts%}
+                            {% if post == page %}
+                            {% assign stop = true %}
+                            {% elsif post.category == "service"  %}
+                            {% if stop %}
+                            {% assign prev = post.url %}
+                            {% assign pTitle = post.title %}
+                            {% break %}
+                            {% else %}
+                            {% assign next = post.url %}
+                            {% assign nTitle = post.title %}
+                            {% endif %}
+                            {% endif %}
+                            {% endfor%}
+                            {% if prev != "" %}
+                            <li class="previous"><a href="{{ prev }}">← Vorige service<!-- : {{pTitle}} --></a></li>
+                            {% endif %}
+                            {% if page.tags contains "openstaand" %}
+                                <li class="participate"><a href="{{ site.url }}/contact/participate.html?service={{ page.title }}"><span class="button-text">Ik wens mee te doen aan de ontwikkeling van deze service</span><span class="button-text-small">Meedoen</span></a></li>
+                            {% endif %}
+                            {% if next != "" %}
+                            <li class="next"><a href="{{ next }}"> Volgende service<!-- : {{nTitle}}  -->→</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                    {% if page.category == "challenge" %}
+                        <ul class="pager"> 
+                            {% assign prev = "" %}
+                            {% assign next = "" %}
+                            {% assign stop = false %}
+                            {% for post in site.posts%}
+                            {% if post == page %}
+                            {% assign stop = true %}
+                            {% elsif post.cateogry == "future" %}
+                            {% if stop %}
+                            {% assign prev = post.url %}
+                            {% assign pTitle = post.title %}
+                            {% break %}
+                            {% else %}
+                            {% assign next = post.url %}
+                            {% assign nTitle = post.title %}
+                            {% endif %}
+                            {% endif %}
+                            {% endfor%}
+                            {% if prev != "" %}
+                            <li class="previous"><a href="{{ prev }}">← Vorige challenge<!-- : {{pTitle}} --></a></li>
+                            {% endif %}
+                            {% if next != "" %}
+                            <li class="next"><a href="{{ next }}"> Volgende challenge<!-- : {{nTitle}}  -->→</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                    {% if page.category == "news" %}
+                        <ul class="pager"> 
+                            {% assign prev = "" %}
+                            {% assign next = "" %}
+                            {% assign stop = false %}
+                            {% for post in site.posts%}
+                            {% if post == page %}
+                            {% assign stop = true %}
+                            {% elsif post.category == "news" %}
+                            {% if stop %}
+                            {% assign prev = post.url %}
+                            {% assign pTitle = post.title %}
+                            {% break %}
+                            {% else %}
+                            {% assign next = post.url %}
+                            {% assign nTitle = post.title %}
+                            {% endif %}
+                            {% endif %}
+                            {% endfor%}
+                            {% if prev != "" %}
+                            <li class="previous"><a href="{{ prev }}">← Vorig nieuwsbericht<!-- : {{pTitle}} --></a></li>
+                            {% endif %}
+                            {% if next != "" %}
+                            <li class="next"><a href="{{ next }}"> Volgend nieuwsbericht<!-- : {{nTitle}}  -->→</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+
+                    {% if page.image == "" or page.image == nil or page.image == blank %}
+
+                    {% else %}
+                        <img src="{{ site.baseurl }}{{ page.image }}" alt="img.png">
+                    {% endif %}
+                    
+                    <div class="post-extras bordered text-center">
+                        <div class="text-center">
+                            {% if page.category == 'service' or page.category == 'challenge' %}
+                            <span class="post-category">
+                                <i class="fa fa-folder-open"></i>
+                                <a href="" rel="tag">{{page.category}}</a>
+                            </span>
+                            {% endif %}
+                            {% if page.tags.size > 0 %}
+                                <span class="post-tags">
+                                    <i class="fa fa-tags"></i>
+                                        {% for tag in page.tags %}
+                                            <a href="" rel="tag">{{ tag }}</a>
+                                        {% endfor %}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <p> {{ page.content | remove: page.excerpt }} </p>
+                    <br>
+                    <br>
+                    <br>
+                    {% if page.category == "service"  %}
+                        <ul class="pager">
+                            {% if prev != "" %}
+                            <li class="previous"><a href="{{ prev }}">← Vorige service<!-- : {{pTitle}} --></a></li>
+                            {% endif %}
+                            {% if page.tags contains "openstaand" %}
+                                <li class="participate"><a href="{{ site.url }}/contact/participate.html?project={{ page.title }}"><span class="button-text">Ik wens mee te doen aan de ontwikkeling van deze service</span><span class="button-text-small">Meedoen</span></a></li>
+                            {% endif %}
+                            {% if next != "" %}
+                            <li class="next"><a href="{{ next }}"> Volgende service<!-- : {{nTitle}}  -->→</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                    {% if page.category == "challenge" %}
+                        <ul class="pager">
+                            {% if prev != "" %}
+                            <li class="previous"><a href="{{ prev }}">← Vorige challenge<!-- : {{pTitle}} --></a></li>
+                            {% endif %}
+                            {% if next != "" %}
+                            <li class="next"><a href="{{ next }}"> Volgende challenge<!-- : {{nTitle}}  -->→</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %} 
+                    {% if page.category == "news" %}
+                        <ul class="pager">
+                            {% if prev != "" %}
+                            <li class="previous"><a href="{{ prev }}">← Vorig nieuwsbericht<!-- : {{pTitle}} --></a></li>
+                            {% endif %}
+                            {% if next != "" %}
+                            <li class="next"><a href="{{ next }}"> Volgend nieuwsbericht<!-- : {{nTitle}}  -->→</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% if page.category == 'service' %}
+        <section class="related-posts">
+            <div class="container">
+                <div class="col-md-12">
+                    <h1>Andere Services</h1>
+                    <ul class="list-unstyled list-container">
+                        {% assign servicesbyweight = site.categories.service | sort:"weight"  %}
+                        {% for post in servicesbyweight reversed%}
+                            {% if forloop.index == 5 %}
+                                {% break %}
+                            {% endif %}
+                            <li class="post-item col-md-3">
+                                <div class="grid-post swatch-white-blue">
+                                    <article id="post-191" class="post-showinfo  post-191 post type-post status-publish format-standard has-post-thumbnail hentry category-html category-seo tag-css tag-html tag-mobile">
+                                        <div class="post-media overlay">
+                                            <a href="{{ site.baseurl }}{{ post.url }}" class="feature-image hover-animate">
+                                                {% if post.image == "" or post.image == nil or post.image == blank %}
+                                                    <img src="../../../../images/posts/news_placeholder.png" class="" alt="img-4-1170x400.png">
+                                                {% else %}
+                                                    <img class="service-image" src="{{ site.baseurl }}{{ post.image }}" alt="img-4-1170x400.png">
+                                                {% endif %}
+                                                <i class="fa fa-link"></i>
+                                            </a>
+                                        </div>
+                                        <div class="post-head small-screen-center">
+                                            <h2 class="post-title entry-title">
+                                                <a href="{{ site.baseurl }}{{ post.url }}" title="Permalink to Increase Traffic being Mobile Friendly"
+                                                    rel="bookmark">
+                                                    {{ post.title }} </a>
+                                            </h2>
+                                            
+                                            <small class="post-date">
+                                                    {{ post.date | date_to_long_string }} </small>
+                                            <div class="post-icon">
+                                                <div class="hex hex-big">
+                                                    <i class="fa fa-file-text"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="post-body entry-content">
+                                            <p>{{ post.content | strip_html | truncatewords: 35 }}</p>
+                                            <a href="{{ site.baseurl }}{{ post.url }}" class="more-link">Lees meer</a>
+                                        </div> -->
+                                        {% comment %} <div class="post-extras bordered text-center">
+                                            <div class="text-center">
+                                            
+                                                <span class="post-tags">
+                                                    <i class="fa fa-tags"></i>
+                                                    {% for tag in post.tags %}
+                                                    <a href="" rel="tag">{{ tag | first }} test</a>,
+                                                    {% endfor %}                                                                
+                                                </span>
+
+                                            </div>
+                                        </div>   {% endcomment %}                               
+                                    </article>
+                                </div>
+                            </li>   
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+</div>
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-20970794-1', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+
+
+
+        <div class="mailmunch-overlay" id="mailmunch-overlay-15f77ba0affd6d2" style="display: none; background: rgba(0, 0, 0, 0.7);"></div>
+        <div class="mailmunch-popover" id="mailmunch-popover-15f77ba0affd6d2" style="position: fixed; left: 0px; top: 0px; display: none;">
+            <div class="mailmunch-popover-container" id="mailmunch-popover-container-15f77ba0affd6d2">
+                <div class="mailmunch-inner-overlay" id="mailmunch-inner-overlay-15f77ba0affd6d2"></div>
+                <div class="mailmunch-popover-content" style="max-width: 500px;">
+                    <div class="mailmunch-popover-iframe-scaler" style="padding-top: 367px;">
+                        <iframe id="mailmunch-popover-frame-15f77ba0affd6d2" class="mailmunch-popover-iframe" frameborder="0" scrolling="no" allowtransparency="true"
+                            style="height: 367px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+<script src="/js/smartcrop.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-86297842-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+
+</html>

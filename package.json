@@ -1,7 +1,7 @@
 {
-  "name": "MOTFTP",
+  "name": "museum-of-things-for-the-people",
   "version": "1.0.0",
-  "description": "Dit is een demo pagina voor de website van service factory gemaakt door lab9k.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "publish": "node ./publish.js"

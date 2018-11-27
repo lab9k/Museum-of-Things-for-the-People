@@ -2,7 +2,7 @@ markdown: kramdown
 highlighter: rouge
 plugins: [jekyll-feed]
 url: https://lab9k.gent/Museum-of-Things-for-the-People/
-baseurl: https://lab9k.gent/Museum-of-Things-for-the-People/
+baseurl: https://lab9k.gent/Museum-of-Things-for-the-People
 title: 'Museum of Things for the People'
 description: 'Get your latest info about Museum of Things for the People.'
 author: Jefwillems

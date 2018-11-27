@@ -26,7 +26,7 @@ title: Museum of Things for the People
         </div>
       </div>
     </section>
-    <section class="section-normal swatch-white-blue">
+    <section class="section-normal swatch-white-blue" id="whatismotftp">
       <div class="container">
         <div class="row vertical-top">
           <div class="col-md-12  text-default">
@@ -39,12 +39,14 @@ title: Museum of Things for the People
               <li class="col-md-4">
                 <div class="box-round box">
                   <div class="box-dummy"></div>
-                  <a class="box-inner" href="#" target="_self">
+                  <a class="box-inner" href="#whatismotftp" target="_self">
                     <i class="fa fa-users" data-animation="bounce"></i>
                   </a>
                 </div>
                 <h3 class="text-center">
-                  <a href="#" target="_self"> Op menselijk niveau</a>
+                  <a href="#whatismotftp" target="_self">
+                    Op menselijk niveau</a
+                  >
                 </h3>
                 <p class="text-center">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -55,12 +57,14 @@ title: Museum of Things for the People
               <li class="col-md-4">
                 <div class="box-round box">
                   <div class="box-dummy"></div>
-                  <a class="box-inner" href="#" target="_self">
+                  <a class="box-inner" href="#whatismotftp" target="_self">
                     <i class="fa fa-wrench" data-animation="wiggle"></i>
                   </a>
                 </div>
                 <h3 class="text-center">
-                  <a href="#" target="_self"> Op technisch niveau</a>
+                  <a href="#whatismotftp" target="_self">
+                    Op technisch niveau</a
+                  >
                 </h3>
                 <p class="text-center">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -71,12 +75,12 @@ title: Museum of Things for the People
               <li class="col-md-4">
                 <div class="box-round box">
                   <div class="box-dummy"></div>
-                  <a class="box-inner" href="#" target="_self">
+                  <a class="box-inner" href="#whatismotftp" target="_self">
                     <i class="fa fa-gavel" data-animation="bounce"></i>
                   </a>
                 </div>
                 <h3 class="text-center">
-                  <a href="#" target="_self"> Op legal niveau</a>
+                  <a href="#whatismotftp" target="_self"> Op legal niveau</a>
                 </h3>
                 <p class="text-center">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
@@ -89,113 +93,6 @@ title: Museum of Things for the People
         </div>
       </div>
     </section>
-    <!--
-      <section class="section swatch-white-blue section-normal ">
-        <!!-- <div class="background-media"></div> #} --!!>
-        <div class="background-overlay" style=""></div>
-        <div class="container">
-          <div class="row vertical-top">
-            <div class="col-md-12  text-default">
-              <div class="sidebar-widget widget_recent_entries col-md-12">
-                <header class="section-header text-center no-underline">
-                  <h1 class="headline  regular">Services</h1>
-                </header>
-                <div class="col-md-4">
-                  <h3 class="text-center">
-                    <a
-                      href="/services.html"
-                      target="_self"
-                      style="margin-bottom: 10px;display: block;"
-                    >
-                      Te bouwen services
-                    </a>
-                  </h3>
-                  {% if site.tags.openstaand.size > 0 %} {% assign
-                  openstaandbyweight = site.tags.openstaand | sort:"weight" %} {%
-                  for post in openstaandbyweight reversed %} {% if forloop.index
-                  == 11 %} {% break %} {% endif %}
-                  <ul>
-                    <li>
-                      <div class="post-icon"><i class="fa fa-file-text"></i></div>
-                      <a
-                        href="{{ site.url }}{{ post.url }}"
-                        title="{{ post.title }}"
-                      >
-                        {{ post.title }}
-                      </a>
-                      <small></small>
-                    </li>
-                  </ul>
-                  {% endfor %} {% else %}
-                  <p>Er zijn geen openstaande services.</p>
-                  {% endif %}
-                </div>
-                <div class="col-md-4">
-                  <h3 class="text-center">
-                    <a
-                      href="/services.html"
-                      target="_self"
-                      style="margin-bottom: 10px;display: block;"
-                    >
-                      In opbouw
-                    </a>
-                  </h3>
-                  {% if site.tags.lopend.size > 0 %} {% assign lopendbyweight =
-                  site.tags.lopend | sort:"weight" %} {% for post in
-                  lopendbyweight reversed %} {% if forloop.index == 11 %} {% break
-                  %} {% endif %}
-                  <ul>
-                    <li>
-                      <div class="post-icon"><i class="fa fa-file-text"></i></div>
-                      <a
-                        href="{{ site.url }}{{ post.url }}"
-                        title="{{ post.title }}"
-                      >
-                        {{ post.title }}
-                      </a>
-                      <small></small>
-                    </li>
-                  </ul>
-                  {% endfor %} {% else %}
-                  <p>Er zijn geen lopende services beschikbaar.</p>
-                  {% endif %}
-                </div>
-                <div class="col-md-4">
-                  <h3 class="text-center">
-                    <a
-                      href="/services.html"
-                      target="_self"
-                      style="margin-bottom: 10px;display: block;"
-                    >
-                      Opgeleverde services
-                    </a>
-                  </h3>
-                  {% if site.tags.afgewerkt.size > 0 %} {% assign
-                  afgewerktbyweight = site.tags.afgewerkt | sort:"weight" %} {%
-                  for post in afgewerktbyweight reversed %} {% if forloop.index ==
-                  11 %} {% break %} {% endif %}
-                  <ul>
-                    <li>
-                      <div class="post-icon"><i class="fa fa-file-text"></i></div>
-                      <a
-                        href="{{ site.url }}{{ post.url }}"
-                        title="{{ post.title }}"
-                      >
-                        {{ post.title }}
-                      </a>
-                      <small></small>
-                    </li>
-                  </ul>
-                  {% endfor %} {% else %}
-                  <p>Er zijn geen opgeleverde services beschikbaar.</p>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    -->
     <section class="section-normal swatch-light-grey section-normal ">
       {% if site.categories.news.size > 0 %}
       <div class="container">
@@ -221,14 +118,20 @@ title: Museum of Things for the People
                           {% if post.image == "" or post.image == nil or
                           post.image == blank %}
                           <img
-                            src="images/posts/news_placeholder.png"
-                            class=""
+                            src="{{ site.baseurl }}/images/posts/news_placeholder.png"
+                            class=" cropImg"
+                            alt="img-4-1170x400.png"
+                          />
+                          {% elsif post.image contains "http" %}
+                          <img
+                            class="service-image cropImg"
+                            src="{{ post.image }}"
                             alt="img-4-1170x400.png"
                           />
                           {% else %}
                           <img
+                            class="service-image cropImg"
                             src="{{ site.baseurl }}{{ post.image }}"
-                            class="cropnews"
                             alt="img-4-1170x400.png"
                           />
                           {% endif %}

@@ -4,7 +4,7 @@ title: Service factory
 ---
 
 <head>
-    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/css/post.css">
 </head>
 
 <body>
@@ -35,13 +35,13 @@ title: Service factory
                             {% endif %}
                             {% endfor%}
                             {% if prev != "" %}
-                            <li class="previous"><a href="{{ prev }}">← Vorige service<!-- : {{pTitle}} --></a></li>
+                            <li class="previous"><a href="{{ site.baseurl }}{{ prev }}">← Vorige service<!-- : {{pTitle}} --></a></li>
                             {% endif %}
                             {% if page.tags contains "openstaand" %}
-                                <li class="participate"><a href="{{ site.url }}/contact/participate.html?service={{ page.title }}"><span class="button-text">Ik wens mee te doen aan de ontwikkeling van deze service</span><span class="button-text-small">Meedoen</span></a></li>
+                                <li class="participate"><a href="{{ site.baseurl }}/contact/participate.html?service={{ page.title }}"><span class="button-text">Ik wens mee te doen aan de ontwikkeling van deze service</span><span class="button-text-small">Meedoen</span></a></li>
                             {% endif %}
                             {% if next != "" %}
-                            <li class="next"><a href="{{ next }}"> Volgende service<!-- : {{nTitle}}  -->→</a></li>
+                            <li class="next"><a href="{{ site.baseurl }}{{ next }}"> Volgende service<!-- : {{nTitle}}  -->→</a></li>
                             {% endif %}
                         </ul>
                     {% endif %}
@@ -65,10 +65,10 @@ title: Service factory
                             {% endif %}
                             {% endfor%}
                             {% if prev != "" %}
-                            <li class="previous"><a href="{{ prev }}">← Vorige challenge<!-- : {{pTitle}} --></a></li>
+                            <li class="previous"><a href="{{site.baseurl}}{{ prev }}">← Vorige challenge<!-- : {{pTitle}} --></a></li>
                             {% endif %}
                             {% if next != "" %}
-                            <li class="next"><a href="{{ next }}"> Volgende challenge<!-- : {{nTitle}}  -->→</a></li>
+                            <li class="next"><a href="{{site.baseurl}}{{ next }}"> Volgende challenge<!-- : {{nTitle}}  -->→</a></li>
                             {% endif %}
                         </ul>
                     {% endif %}
@@ -92,10 +92,10 @@ title: Service factory
                             {% endif %}
                             {% endfor%}
                             {% if prev != "" %}
-                            <li class="previous"><a href="{{ prev }}">← Vorig nieuwsbericht<!-- : {{pTitle}} --></a></li>
+                            <li class="previous"><a href="{{ site.baseurl }}{{ prev }}">← Vorig nieuwsbericht<!-- : {{pTitle}} --></a></li>
                             {% endif %}
                             {% if next != "" %}
-                            <li class="next"><a href="{{ next }}"> Volgend nieuwsbericht<!-- : {{nTitle}}  -->→</a></li>
+                            <li class="next"><a href="{{ site.baseurl }}{{ next }}"> Volgend nieuwsbericht<!-- : {{nTitle}}  -->→</a></li>
                             {% endif %}
                         </ul>
                     {% endif %}
@@ -131,33 +131,33 @@ title: Service factory
                     {% if page.category == "service"  %}
                         <ul class="pager">
                             {% if prev != "" %}
-                            <li class="previous"><a href="{{ prev }}">← Vorige service<!-- : {{pTitle}} --></a></li>
+                            <li class="previous"><a href="{{ site.baseurl }}{{ prev }}">← Vorige service<!-- : {{pTitle}} --></a></li>
                             {% endif %}
                             {% if page.tags contains "openstaand" %}
                                 <li class="participate"><a href="{{ site.url }}/contact/participate.html?project={{ page.title }}"><span class="button-text">Ik wens mee te doen aan de ontwikkeling van deze service</span><span class="button-text-small">Meedoen</span></a></li>
                             {% endif %}
                             {% if next != "" %}
-                            <li class="next"><a href="{{ next }}"> Volgende service<!-- : {{nTitle}}  -->→</a></li>
+                            <li class="next"><a href="{{ site.baseurl }}{{ next }}"> Volgende service<!-- : {{nTitle}}  -->→</a></li>
                             {% endif %}
                         </ul>
                     {% endif %}
                     {% if page.category == "challenge" %}
                         <ul class="pager">
                             {% if prev != "" %}
-                            <li class="previous"><a href="{{ prev }}">← Vorige challenge<!-- : {{pTitle}} --></a></li>
+                            <li class="previous"><a href="{{ site.baseurl }}{{ prev }}">← Vorige challenge<!-- : {{pTitle}} --></a></li>
                             {% endif %}
                             {% if next != "" %}
-                            <li class="next"><a href="{{ next }}"> Volgende challenge<!-- : {{nTitle}}  -->→</a></li>
+                            <li class="next"><a href="{{ site.baseurl }}{{ next }}"> Volgende challenge<!-- : {{nTitle}}  -->→</a></li>
                             {% endif %}
                         </ul>
                     {% endif %} 
                     {% if page.category == "news" %}
                         <ul class="pager">
                             {% if prev != "" %}
-                            <li class="previous"><a href="{{ prev }}">← Vorig nieuwsbericht<!-- : {{pTitle}} --></a></li>
+                            <li class="previous"><a href="{{ site.baseurl }}{{ prev }}">← Vorig nieuwsbericht<!-- : {{pTitle}} --></a></li>
                             {% endif %}
                             {% if next != "" %}
-                            <li class="next"><a href="{{ next }}"> Volgend nieuwsbericht<!-- : {{nTitle}}  -->→</a></li>
+                            <li class="next"><a href="{{ site.baseurl }}{{ next }}"> Volgend nieuwsbericht<!-- : {{nTitle}}  -->→</a></li>
                             {% endif %}
                         </ul>
                     {% endif %}
@@ -182,7 +182,9 @@ title: Service factory
                                         <div class="post-media overlay">
                                             <a href="{{ site.baseurl }}{{ post.url }}" class="feature-image hover-animate">
                                                 {% if post.image == "" or post.image == nil or post.image == blank %}
-                                                    <img src="../../../../images/posts/news_placeholder.png" class="" alt="img-4-1170x400.png">
+                                                    <img src="{{ site.baseurl }}/images/posts/news_placeholder.png" class="" alt="img-4-1170x400.png">
+                                                {% elsif post.image contains "http" %}   
+                                                    <img class="service-image" src="{{ post.image }}" alt="img-4-1170x400.png">
                                                 {% else %}
                                                     <img class="service-image" src="{{ site.baseurl }}{{ post.image }}" alt="img-4-1170x400.png">
                                                 {% endif %}

@@ -1,5 +1,9 @@
 const github_pages = require('gh-pages');
 
-github_pages.publish('_site', function(err) {
-  console.error(err);
+github_pages.publish('_site', { dotfiles: true }, function(err) {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log('Push succesfull');
+  }
 });

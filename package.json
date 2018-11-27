@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "publish": "NODE_DEBUG=gh-pages node ./publish.js"
+    "publish": "NODE_DEBUG=gh-pages node ./publish.js",
+    "test": "JEKYLL_ENV=development bundle exec jekyll serve",
+    "prepublish": "JEKYLL_ENV=production bundle exec jekyll build"
   },
   "repository": {
     "type": "git",

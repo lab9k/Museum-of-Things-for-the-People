@@ -83,3 +83,5 @@ feed_meta %} <title>{{ page.title }}</title>
   href="https://fonts.googleapis.com/css?family=Kanit:300,400,700"
   rel="stylesheet"
 />
+{% if jekyll.environment == "production" %} // Production environment.
+<base href="https://lab9k.gent/Museum-of-Things-for-the-People/" /> {% endif %}

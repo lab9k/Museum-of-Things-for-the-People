@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Lorem ipsum dolor sit amet
-image: https://picsum.photos/383.33/262.27
-date: 2017-11-14 00:00:00 -0500
+title: rerum provident ut aliquam
+image:
+date: 2018-11-14 00:00:00 -0500
 category: news
 ---
 

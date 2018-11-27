@@ -1,7 +1,7 @@
 ---
 layout: post
 title: rerum provident ut aliquam
-image:
+image: /images/motftp.svg
 date: 2017-11-14 00:00:00 -0500
 category: news
 ---

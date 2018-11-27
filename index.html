@@ -118,14 +118,20 @@ title: Museum of Things for the People
                           {% if post.image == "" or post.image == nil or
                           post.image == blank %}
                           <img
-                            src="images/posts/news_placeholder.png"
-                            class=""
+                            src="{{ site.baseurl }}/images/posts/news_placeholder.png"
+                            class=" cropImg"
+                            alt="img-4-1170x400.png"
+                          />
+                          {% elsif post.image contains "http" %}
+                          <img
+                            class="service-image cropImg"
+                            src="{{ post.image }}"
                             alt="img-4-1170x400.png"
                           />
                           {% else %}
                           <img
+                            class="service-image cropImg"
                             src="{{ site.baseurl }}{{ post.image }}"
-                            class="cropnews"
                             alt="img-4-1170x400.png"
                           />
                           {% endif %}

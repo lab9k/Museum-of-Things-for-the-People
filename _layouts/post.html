@@ -183,12 +183,10 @@ title: Service factory
                                             <a href="{{ site.baseurl }}{{ post.url }}" class="feature-image hover-animate">
                                                 {% if post.image == "" or post.image == nil or post.image == blank %}
                                                     <img src="{{ site.baseurl }}/images/posts/news_placeholder.png" class="" alt="img-4-1170x400.png">
+                                                {% elsif post.image contains "http" %}   
+                                                    <img class="service-image" src="{{ post.image }}" alt="img-4-1170x400.png">
                                                 {% else %}
-                                                    {% if post.image contains "https://" or post.image contains "http://" %}
-                                                        <img class="service-image" src="{{ post.image }}" alt="img-4-1170x400.png">
-                                                    {% else %}
-                                                        <img class="service-image" src="{{ site.baseurl }}{{ post.image }}" alt="img-4-1170x400.png">
-                                                    {% endif %}
+                                                    <img class="service-image" src="{{ site.baseurl }}{{ post.image }}" alt="img-4-1170x400.png">
                                                 {% endif %}
                                                 <i class="fa fa-link"></i>
                                             </a>

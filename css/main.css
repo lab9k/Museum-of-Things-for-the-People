@@ -7960,9 +7960,6 @@ h4 {
   -o-transition: opacity 1s ease-in;
   transition: opacity 1s ease-in;
 }
-.transparant {
-  opacity: 0;
-}
 
 .post-service {
   border-radius: 10px;

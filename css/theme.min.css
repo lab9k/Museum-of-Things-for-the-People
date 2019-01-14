@@ -3463,12 +3463,12 @@ pre {
 }
 
 .background-media {
-  background-position: 0 0;
-  background-repeat: no-repeat;
   z-index: 1;
   overflow: hidden;
-  background: url('../images/background.png');
-  background-size: cover;
+  background: url('http://beeldbank.stad.gent/GENT/24f7382ba3a944f3b08b777eba9c8c54cade9f237a354fcb9a35202ead146b2c/browse.jpg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
 }
 [class*='oxy-agent-'] .background-media {
   background-attachment: scroll !important;

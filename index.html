@@ -21,71 +21,93 @@ title: Museum of Things for the People
             <!-- <header class="section-header text-center no-underline"> -->
             <header class="no-underline">
               <h1 class="">Museum of Things for the People</h1>
+              <p class="aligncenter">Onderzoek naar IoT in Musea</p>
             </header>
           </div>
         </div>
       </div>
     </section>
-    <section class="section-normal swatch-white-blue" id="whatismotftp">
+    <section
+      id="over"
+      class="section-small swatch-black-white section-intro"
+    >
+      <div class="container context-container">
+        <header class="section-header text-center no-underline">
+          <h1 class="headline regular">Introductie</h1>
+        </header>
+        <div class="">
+          <p>
+            Museum of Things for People (MTP) is een vooronderzoek, inhoudelijk
+            getrokken door het Design Museum Gent, naar hoe IoT-technologie kan
+            bijdragen tot een verbetering van de aangeboden diensten en een
+            verrijking van de bezoekerservaring. Op één jaar tijd willen we
+            weten welke technologieën musea echt kunnen verder helpen en die
+            leerervaring delen we graag met iedereen.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section-normal swatch-white-blue" id="doel">
       <div class="container">
         <div class="row vertical-top">
           <div class="col-md-12  text-default">
             <header class="section-header text-center no-underline">
               <h1 class="headline regular">
-                Wat is de Museum of Things for the People?
+                We onderzoeken de impact van IoT op drie verschillende niveau’s
               </h1>
             </header>
             <ul class="list-unstyled row horizontal-icon-border box-list">
               <li class="col-md-4">
                 <div class="box-round box">
                   <div class="box-dummy"></div>
-                  <a class="box-inner" href="#whatismotftp" target="_self">
+                  <a class="box-inner" href="#doel" target="_self">
                     <i class="fa fa-users" data-animation="bounce"></i>
                   </a>
                 </div>
                 <h3 class="text-center">
-                  <a href="#whatismotftp" target="_self">
-                    Op menselijk niveau</a
-                  >
+                  <a href="#doel" target="_self"> Menselijk</a>
                 </h3>
                 <p class="text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci delectus nihil illo dicta modi, temporibus vel
-                  aliquid eligendi hic magnam!
+                  We onderzoeken in welke mate IoT gebruik menselijk en
+                  wenselijk is. Welke vormen van interactie zoeken bezoekers?
+                  Wat vinden ze intrusief? Welke handelingen zijn ze bereid te
+                  maken, enz. Dit willen we onderzoeken in dit project.
                 </p>
               </li>
               <li class="col-md-4">
                 <div class="box-round box">
                   <div class="box-dummy"></div>
-                  <a class="box-inner" href="#whatismotftp" target="_self">
+                  <a class="box-inner" href="#doel" target="_self">
                     <i class="fa fa-wrench" data-animation="wiggle"></i>
                   </a>
                 </div>
                 <h3 class="text-center">
-                  <a href="#whatismotftp" target="_self">
-                    Op technisch niveau</a
-                  >
+                  <a href="#doel" target="_self"> Technologisch</a>
                 </h3>
                 <p class="text-center">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Maiores, id! Fuga maxime aspernatur adipisci fugiat,
-                  accusantium dignissimos temporibus voluptate repellendus.
+                  We onderzoeken welke technologieën het mogelijk maken om aan
+                  indoor tracking en profilering te doen. Zijn beacons
+                  interessanter tegenover LIDARS, smart camera’s, ultra wide
+                  band, wearables of andre technologie? En wat zijn de voordelen
+                  en voorwaarden?
                 </p>
               </li>
               <li class="col-md-4">
                 <div class="box-round box">
                   <div class="box-dummy"></div>
-                  <a class="box-inner" href="#whatismotftp" target="_self">
+                  <a class="box-inner" href="#doel" target="_self">
                     <i class="fa fa-gavel" data-animation="bounce"></i>
                   </a>
                 </div>
                 <h3 class="text-center">
-                  <a href="#whatismotftp" target="_self"> Op legal niveau</a>
+                  <a href="#doel" target="_self">Juridisch</a>
                 </h3>
                 <p class="text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-                  eius aperiam dolore nesciunt aut repudiandae similique ipsum
-                  explicabo, sapiente voluptatum.
+                  Op basis van wat bezoekers willen en technologisch mogelijk is
+                  moeten we ook de juiste vragen durven stellen rond privacy en
+                  dataverzameling. Wat is de impact van de keuzes die we maken
+                  op de privacy? Zijn daar onbedoelde neveneffecten? Wat moeten
+                  we inbouwen om privacy te garanderen?
                 </p>
               </li>
             </ul>
@@ -93,7 +115,26 @@ title: Museum of Things for the People
         </div>
       </div>
     </section>
-    <section class="section-normal swatch-light-grey section-normal ">
+    <section class="section-small swatch-black-white section-context" id="context">
+      <div class="container context-container">
+        <header class="section-header text-center no-underline">
+          <h1 class="headline regular">Context</h1>
+        </header>
+        <div class="">
+          <p>
+            Dit project is een gesubsidieerd City of Things project, opgestart
+            door de oproep van Vlaams minister van Innovatie Philippe Muyters en
+            ondersteund door VLAIO om samen op zoek te gaan naar slimme
+            internet-of-things-oplossingen. Als één van de 21 gesteunde
+            projecten hebben wij een jaar de tijd gekregen om vooronderzoek te
+            doen naar IoT-technologie. Dit project is een samenwerking tussen
+            Stad Gent, Design Museum Gent, Digipolis Gent, Stad Oostende en De
+            Krook.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section-normal swatch-white-blue">
       {% if site.categories.news.size > 0 %}
       <div class="container">
         <header class="section-header text-center no-underline">
@@ -118,7 +159,9 @@ title: Museum of Things for the People
                           {% if post.image == "" or post.image == nil or
                           post.image == blank %}
                           <img
-                            src="{{ site.baseurl }}/images/posts/news_placeholder.png"
+                            src="{{
+                              site.baseurl
+                            }}/images/posts/news_placeholder.png"
                             class=" cropImg"
                             alt="img-4-1170x400.png"
                           />
@@ -192,10 +235,8 @@ title: Museum of Things for the People
       {% endif %} <br />
       <br />
     </section>
-    <section
-      id="instagramsection"
-      class="section swatch-white-blue section-normal"
-    >
+    <section id="partners"></section>
+    <section id="instagramsection" class="section-normal swatch-black-white">
       <div class="container">
         <header class="section-header text-center no-underline">
           <h1 class="headline regular">Instagram</h1>

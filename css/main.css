@@ -7776,11 +7776,6 @@ footer .footer-sections .footer-section.partners img {
   }
 }
 
-.menu-item-active {
-  border-bottom: 2px solid #004669;
-  border-bottom-color: #337ab7;
-}
-
 .section-normal {
   padding: 16px;
   min-height: 70vh;
@@ -7825,7 +7820,7 @@ a:focus {
 }
 
 .navbar-white a {
-  color: #fff;
+  color: #337ab7;
 }
 .navbar-white a:focus,
 a:hover {

@@ -1,0 +1,81 @@
+<li class="post-item">
+    <div class="grid-post swatch-white-blue">
+      <article
+        id="post-191"
+        class="post-showinfo  post-191 post type-post status-publish format-standard has-post-thumbnail hentry category-html category-seo tag-css tag-html tag-mobile"
+      >
+        <div class="post-media overlay">
+          <a
+            href="{{ site.baseurl }}{{ post.url }}"
+            class="feature-image hover-animate"
+          >
+            {% if post.image == "" or post.image == nil or
+            post.image == blank %}
+            <img
+              src="{{
+                site.baseurl
+              }}/images/posts/news_placeholder.png"
+              class=" cropImg"
+              alt="img-4-1170x400.png"
+            />
+            {% elsif post.image contains "http" %}
+            <img
+              class="service-image cropImg"
+              src="{{ post.image }}"
+              alt="img-4-1170x400.png"
+            />
+            {% else %}
+            <img
+              class="service-image cropImg"
+              src="{{ site.baseurl }}{{ post.image }}"
+              alt="img-4-1170x400.png"
+            />
+            {% endif %}
+          </a>
+        </div>
+        <div class="post-head small-screen-center">
+          <h2 class="post-title entry-title">
+            <a
+              href="{{ site.baseurl }}{{ post.url }}"
+              title="Permalink to Increase Traffic being Mobile Friendly"
+              rel="bookmark"
+            >
+              {{ post.title }}
+            </a>
+          </h2>
+
+          <small class="post-date">
+            {{ post.date | date_to_long_string }}
+          </small>
+          <div class="post-icon">
+            <div class="hex hex-big">
+              <i class="fa fa-file-text"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-body entry-content">
+          {{
+            post.content
+              | remove: post.excerpt
+              | truncatewords: 35
+          }}
+        </div>
+        <a
+          href="{{ site.baseurl }}{{ post.url }}"
+          class="more-link box"
+          >Lees meer</a
+        >
+        {% comment %}
+        <div class="post-extras bordered text-center">
+          <div class="text-center">
+            <span class="post-tags">
+              <i class="fa fa-tags"></i> {% for tag in post.tags
+              %} <a href="" rel="tag">{{ tag | first }} test</a>,
+              {% endfor %}
+            </span>
+          </div>
+        </div>
+        {% endcomment %}
+      </article>
+    </div>
+  </li>

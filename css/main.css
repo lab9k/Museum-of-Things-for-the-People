@@ -24,7 +24,7 @@
   padding-bottom: 33px;
 }
 #masthead .nav > li:hover {
-  border-bottom: 2px solid #23527c;
+  border-bottom: 2px solid #333333;
 }
 #masthead .nav > li > a:before {
   margin-bottom: -14.5px;
@@ -329,7 +329,7 @@
 [class*='swatch-'] .swatch-white-blue h5 a,
 .swatch-white-blue h6 a,
 [class*='swatch-'] .swatch-white-blue h6 a {
-  color: #006495;
+  color: #333333;
 }
 .swatch-white-blue h1 small,
 [class*='swatch-'] .swatch-white-blue h1 small,
@@ -347,11 +347,11 @@
 }
 .swatch-white-blue a,
 [class*='swatch-'] .swatch-white-blue a {
-  color: #006495;
+  color: #333333;
 }
 .swatch-white-blue a:hover,
 [class*='swatch-'] .swatch-white-blue a:hover {
-  color: #004669;
+  color: #333333;
 }
 .swatch-white-blue small,
 [class*='swatch-'] .swatch-white-blue small {
@@ -363,7 +363,7 @@
 }
 .swatch-white-blue small a:hover,
 [class*='swatch-'] .swatch-white-blue small a:hover {
-  color: #006495;
+  color: #333333;
 }
 .swatch-white-blue i,
 [class*='swatch-'] .swatch-white-blue i {
@@ -379,12 +379,12 @@
 }
 .swatch-white-blue::selection,
 [class*='swatch-'] .swatch-white-blue::selection {
-  background: #006495;
+  background: #333333;
   color: #fff;
 }
 .swatch-white-blue::-moz-selection,
 [class*='swatch-'] .swatch-white-blue::-moz-selection {
-  background: #006495;
+  background: #333333;
   color: #fff;
 }
 .swatch-white-blue hr,
@@ -400,7 +400,7 @@
 [class*='swatch-'] .swatch-white-blue .section-header:after,
 .swatch-white-blue .bordered-header:after,
 [class*='swatch-'] .swatch-white-blue .bordered-header:after {
-  background: #006495;
+  background: #333333;
 }
 .swatch-white-blue .active,
 [class*='swatch-'] .swatch-white-blue .active {
@@ -661,7 +661,7 @@
 }
 .swatch-white-blue.navbar .nav > li > a:before,
 [class*='swatch-'] .swatch-white-blue.navbar .nav > li > a:before {
-  background-color: #006495;
+  background-color: #333333;
 }
 .swatch-white-blue .navbar-toggle,
 [class*='swatch-'] .swatch-white-blue .navbar-toggle {
@@ -1456,7 +1456,7 @@
 }
 .swatch-white-blue .box-inner,
 [class*='swatch-'] .swatch-white-blue .box-inner {
-  background: #006495;
+  background: #333333;
 }
 .swatch-white-blue .box-inner i,
 [class*='swatch-'] .swatch-white-blue .box-inner i {
@@ -1481,11 +1481,11 @@
   .swatch-white-blue
   .horizontal-icon-border
   [class^='box-']:before {
-  border-color: #006495;
+  border-color: #333333;
 }
 .swatch-white-blue #infscr-loading,
 [class*='swatch-'] .swatch-white-blue #infscr-loading {
-  background: #006495;
+  background: #333333;
   color: #fff;
 }
 .swatch-white-blue .counter .value,
@@ -3272,7 +3272,7 @@
 }
 .swatch-blue-white .box-inner i,
 [class*='swatch-'] .swatch-blue-white .box-inner i {
-  color: #006495;
+  color: #333333;
 }
 .swatch-blue-white .box-badge,
 [class*='swatch-'] .swatch-blue-white .box-badge {
@@ -7772,7 +7772,7 @@ footer .footer-sections .footer-section.partners img {
 }
 @media (min-width: 892px) {
   nav#main-navbar.in ul#menu-navigation li:hover {
-    border-bottom: 2px solid #004669;
+    border-bottom: 2px solid #000000;
   }
 }
 
@@ -7811,20 +7811,20 @@ footer .footer-sections .footer-section.partners img {
 }
 
 .menu-item a {
-  color: #337ab7;
+  color: #333333;
 }
 
 .menu-item a:hover,
 a:focus {
-  color: #006495;
+  color: #000000;
 }
 
 .navbar-white a {
-  color: #337ab7;
+  color: #333333;
 }
 .navbar-white a:focus,
 a:hover {
-  color: #337ab7;
+  color: #333333;
 }
 
 *,

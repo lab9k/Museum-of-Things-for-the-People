@@ -9,3 +9,4 @@ _site
 .vscode
 
 node_modules
+images/partners/.DS_Store
